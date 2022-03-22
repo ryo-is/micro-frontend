@@ -1,28 +1,16 @@
-import { gql, useQuery } from '@apollo/client';
-import { Query } from '@graphql/generated/graphql';
+import { useUserQuery } from '@graphql/user';
 
 export const GraphQL = () => {
-  const query = gql`
-    query Get($userId: Int!) {
-      user(id: $userId) {
-        id
-        name
-      }
-    }
-  `;
-  const { loading, error, data } = useQuery<Query>(query, {
-    variables: {
-      userId: 100,
-    },
-  });
+  const { loading, error, data } = useUserQuery({ userId: 100 });
 
   return (
     <>
       {loading ? (
         <div>Loading...</div>
       ) : (
-        <div>
-          {data?.user?.id} / {data?.user?.name}
+        <div className="p-4">
+          <div>UserID: {data?.user?.id}</div>
+          <div>Name: {data?.user?.name}</div>
         </div>
       )}
     </>
