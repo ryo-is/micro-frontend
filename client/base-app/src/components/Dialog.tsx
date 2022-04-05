@@ -12,17 +12,17 @@ export const Dialog = () => {
             className="w-full h-screen bg-black opacity-70"
             onClick={handleClickCancel}
           />
-          <dialog open={isOpen} className="w-2/12">
+          <dialog open={isOpen} className="w-modal">
             <div className="py-2">{message}</div>
-            <div className="text-right">
+            <div className="flex gap-2">
               <button
-                className="bg-gray-600 hover:bg-gray-700 text-gray-200 py-2 px-4 rounded mt-2 mr-2"
+                className="bg-gray-600 hover:bg-gray-700 text-gray-200 py-2 px-4 rounded mt-2 w-1/2"
                 onClick={handleClickCancel}
               >
                 キャンセル
               </button>
               <button
-                className="bg-blue-600 hover:bg-blue-700 text-gray-200 py-2 px-4 rounded mt-2"
+                className="bg-blue-600 hover:bg-blue-700 text-gray-200 py-2 px-4 rounded mt-2 w-1/2"
                 onClick={handleClickOK}
               >
                 OK
