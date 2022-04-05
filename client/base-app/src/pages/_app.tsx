@@ -3,13 +3,16 @@ import type { AppProps } from 'next/app';
 import { Layout } from '@components/Layout';
 import { ApolloProvider } from '@apollo/client';
 import { client } from '@graphql/client';
+import { ConfirmContextProvider } from '@contexts/confirmDialogContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ConfirmContextProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ConfirmContextProvider>
     </ApolloProvider>
   );
 }
