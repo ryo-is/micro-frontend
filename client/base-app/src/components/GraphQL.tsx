@@ -1,5 +1,5 @@
-import { useUserQuery } from '@graphql/user';
 import { useState } from 'react';
+import { useUserQuery } from '@graphql/user';
 import { Dialog } from './Dialog';
 import { useConfirmDialog } from '@hooks/useConfirmDialog';
 
