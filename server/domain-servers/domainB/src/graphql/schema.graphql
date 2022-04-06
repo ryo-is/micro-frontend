@@ -1,0 +1,8 @@
+type Query {
+  post(id: ID!): Post
+}
+
+type Post @key(fields: "id") {
+  id: ID!
+  title: String!
+}
