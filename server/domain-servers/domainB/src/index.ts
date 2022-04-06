@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const port = 3001;
+const port = 3002;
 
 startApolloServer(app);
 
