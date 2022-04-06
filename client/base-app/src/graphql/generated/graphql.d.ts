@@ -12,9 +12,21 @@ export type Scalars = {
   Float: number;
 };
 
+export type Post = {
+  __typename?: 'Post';
+  id: Scalars['ID'];
+  title: Scalars['String'];
+};
+
 export type Query = {
   __typename?: 'Query';
+  post?: Maybe<Post>;
   user?: Maybe<User>;
+};
+
+
+export type QueryPostArgs = {
+  id: Scalars['ID'];
 };
 
 

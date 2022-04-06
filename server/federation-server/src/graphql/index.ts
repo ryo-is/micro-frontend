@@ -5,7 +5,10 @@ import { ApolloGateway } from '@apollo/gateway';
 // Apollo
 export const startApolloServer = async (app: Express) => {
   const gateway = new ApolloGateway({
-    serviceList: [{ name: 'users', url: 'http://localhost:3001/graphql' }],
+    serviceList: [
+      { name: 'users', url: 'http://localhost:3001/graphql' },
+      { name: 'posts', url: 'http://localhost:3002/graphql' },
+    ],
   });
   const gqlSrever = new ApolloServer({ gateway });
   await gqlSrever.start();
