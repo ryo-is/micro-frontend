@@ -1,9 +1,12 @@
 import { gql, useQuery } from '@apollo/client';
-import { Query } from '@graphql/generated/graphql';
+import {
+  getQueryUser_user,
+  getQueryUserVariables,
+} from './__generated__/getQueryUser';
 
 export const useUserQuery = ({ userId }: { userId: number }) => {
   const query = gql`
-    query Get($userId: Int!) {
+    query getQueryUser($userId: Int!) {
       user(id: $userId) {
         id
         name
@@ -11,7 +14,7 @@ export const useUserQuery = ({ userId }: { userId: number }) => {
     }
   `;
 
-  return useQuery<Query>(query, {
+  return useQuery<getQueryUser_user, getQueryUserVariables>(query, {
     variables: {
       userId,
     },

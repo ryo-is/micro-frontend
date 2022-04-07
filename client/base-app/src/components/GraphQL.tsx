@@ -29,8 +29,8 @@ export const GraphQL = () => {
         <div>Loading...</div>
       ) : (
         <div className="p-4">
-          <div>UserID: {isShowData ? data?.user?.id : '---'}</div>
-          <div>Name: {isShowData ? data?.user?.name : '---'}</div>
+          <div>UserID: {isShowData ? data?.id : '---'}</div>
+          <div>Name: {isShowData ? data?.name : '---'}</div>
           <button
             className="bg-blue-600 hover:bg-blue-700 text-gray-200 py-2 px-4 rounded mt-2 mr-2"
             onClick={handleShowData}
