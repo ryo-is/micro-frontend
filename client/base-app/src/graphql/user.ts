@@ -1,6 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
 import {
-  getQueryUser_user,
+  getQueryUser,
   getQueryUserVariables,
 } from './__generated__/getQueryUser';
 
@@ -14,9 +14,14 @@ export const useUserQuery = ({ userId }: { userId: number }) => {
     }
   `;
 
-  return useQuery<getQueryUser_user, getQueryUserVariables>(query, {
+  const { loading, error, data } = useQuery<
+    getQueryUser,
+    getQueryUserVariables
+  >(query, {
     variables: {
       userId,
     },
   });
+
+  return { userQueryLoading: loading, userQueryError: error, user: data?.user };
 };

@@ -4,7 +4,9 @@ import { Dialog } from './Dialog';
 import { useConfirmDialog } from '@hooks/useConfirmDialog';
 
 export const GraphQL = () => {
-  const { loading, error, data } = useUserQuery({ userId: 100 });
+  const { userQueryLoading, userQueryError, user } = useUserQuery({
+    userId: 100,
+  });
   const { isConfirmed } = useConfirmDialog();
 
   const [isShowData, setIsShowData] = useState(false);
@@ -19,18 +21,18 @@ export const GraphQL = () => {
     if (res) setIsShowData(false);
   };
 
-  if (error) {
-    return <div className="text-red-500">Error!!!</div>;
+  if (userQueryError) {
+    return <div className="text-red-500">userQueryError!!!</div>;
   }
 
   return (
     <>
-      {loading ? (
+      {userQueryLoading ? (
         <div>Loading...</div>
       ) : (
         <div className="p-4">
-          <div>UserID: {isShowData ? data?.id : '---'}</div>
-          <div>Name: {isShowData ? data?.name : '---'}</div>
+          <div>UserID: {isShowData ? user?.id : '---'}</div>
+          <div>Name: {isShowData ? user?.name : '---'}</div>
           <button
             className="bg-blue-600 hover:bg-blue-700 text-gray-200 py-2 px-4 rounded mt-2 mr-2"
             onClick={handleShowData}

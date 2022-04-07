@@ -20,7 +20,6 @@ export const useConfirmDialog = ():
   ];
 
   const isConfirmed = (message: string): Promise<boolean> => {
-    console.log('isConfirmed');
     const promise = new Promise((resolve, reject) => {
       setConfirm({
         isOpen: true,
