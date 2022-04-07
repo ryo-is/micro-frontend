@@ -6,6 +6,6 @@ generates:
     plugins:
       - 'typescript'
       - 'typescript-operations'
-  ./graphql.schema.json:
+  src/graphql/generated/graphql.schema.json:
     plugins:
       - 'introspection'
