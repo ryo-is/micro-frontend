@@ -12,7 +12,7 @@ export const Dialog = () => {
             className="w-full h-screen bg-black opacity-70"
             onClick={handleClickCancel}
           />
-          <dialog open={isOpen} className="w-modal">
+          <dialog open={isOpen} className="w-modal rounded bg-zinc-200">
             <div className="py-2">{message}</div>
             <div className="flex gap-2">
               <button
